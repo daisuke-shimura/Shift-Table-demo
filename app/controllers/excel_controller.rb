@@ -293,23 +293,20 @@ class ExcelController < ApplicationController
 
       #間をtrueで埋める
       shift_box.each_with_index do |k,j|
-        if j > 0
-          triga = 0
-          k.each_with_index do |i,n|
-            if n > 0 #最初の配列は店長だからスキップ
-              if triga == 0
-                if i == true
-                  triga = 1
-                end
-              else
-                if i == true
-                  shift_box[j][n] = false
-                  triga = 0
-                  break #この時点で終わり
-                else
-                  shift_box[j][n] = true
-                end
-              end
+        next if j == 0
+        triga = 0
+        k[0...-1].each_with_index do |i,n|
+          next if n == 0
+          if triga == 0
+            if i == true
+              triga = 1
+            end
+          else
+            if i == true
+              shift_box[j][n] = false
+              break
+            else
+              shift_box[j][n] = true
             end
           end
         end
