@@ -210,7 +210,6 @@ class ExcelController < ApplicationController
 
     end
 
-
     def shift_print(workbook, sheet, time_column, empty_row, style_method, week_n)
 
       shift_box = []
@@ -221,7 +220,7 @@ class ExcelController < ApplicationController
       @user.each_with_index do |user,u|
         user.jobs.where(day_id: @day.id).each_with_index do |job|
           time_n = job.public_send(time_column)
-          unless time_n.blank? || time_n == "×"
+          unless time_n.blank? || time_n == "×" || time_n == "❌" || time_n == "✖"
             shift_box[userid] = ["",false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,""]
             shift_box[userid][0] = user.id
             shift_box[userid][29] = time_n
@@ -306,7 +305,7 @@ class ExcelController < ApplicationController
                 if i == true
                   shift_box[j][n] = false
                   triga = 0
-                  #break #この時点で終わり
+                  break #この時点で終わり
                 else
                   shift_box[j][n] = true
                 end
