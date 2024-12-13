@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resource :fris, only: [:create, :destroy]
     resource :sats, only: [:create, :destroy]
     resource :events, only: [:new, :create, :destroy, :edit, :update]
+    get "excel" => 'excel#export'
     resources :jobs, only: [:new, :create, :update, :destroy, :edit] do
       resources :job_comments, only: [:create, :destroy, :edit, :update]
     end

@@ -175,3 +175,11 @@
     </table>
   </div>
 </div>
+
+<hr>
+<details>
+  <summary>仮シフト表</summary>
+  <%= link_to day_excel_path(@day.id), target: "_blank" do %>
+    <button class="btn btn-primary">Download</button>
+  <% end %>
+</details>
