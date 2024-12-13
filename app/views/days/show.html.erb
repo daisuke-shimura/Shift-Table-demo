@@ -14,6 +14,15 @@
     <%= current_user.name %>
   </span>
 </p>
+
 <hr>
 <h3>シフト希望一覧</h3>
 <%= render "jobs/shift_index", day:@day, user:@user, job_comment:@job_comment %>
+
+<hr>
+<details>
+  <summary>仮シフト表</summary>
+  <%= link_to day_excel_path(@day.id), target: "_blank" do %>
+    <button class="btn btn-primary">Download</button>
+  <% end %>
+</details>
