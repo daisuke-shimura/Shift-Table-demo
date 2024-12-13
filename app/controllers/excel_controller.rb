@@ -39,7 +39,7 @@ class ExcelController < ApplicationController
       
       style_method = style_box(workbook)
 
-  #月曜日ここから
+  #月曜日
     head_print(sheet, workbook, empty_row, day_week, event_day, style_method, 0)
     shift_print(workbook, sheet, :time1, empty_row, style_method, 0)
 
@@ -327,10 +327,7 @@ class ExcelController < ApplicationController
               sheet.rows[@row - userid + i].cells[x].style = style_method[:white_n1]
             end
           elsif j.is_a?(Integer)
-            if j == 
-            else
-              sheet.rows[@row - userid + i].cells[x].value = @user_name[j].length >= 10 ? @user_name[j][0, 4] : @user_name[j]
-            end
+            sheet.rows[@row - userid + i].cells[x].value = @user_name[j].length >= 10 ? @user_name[j][0, 4] : @user_name[j]
             if j == 1
               sheet.rows[@row - userid + i].cells[x].style = style_method[:manager_style]
             else
