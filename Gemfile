@@ -8,7 +8,7 @@ gem 'rails', '~> 6.1.7', '>= 6.1.7.8'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
-gem 'puma', '~> 5.0'
+gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -61,3 +61,11 @@ gem 'bootstrap5-kaminari-views', '~> 0.0.1'
 gem 'dotenv-rails'
 #gem 'wdm', '>= 0.1.0'
 gem 'caxlsx', '~> 3.2'
+
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
+gem "net-smtp"
+gem "net-pop"
+gem "net-imap"
