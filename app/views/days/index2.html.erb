@@ -16,17 +16,17 @@
     </div>
     <div class="col-4 col-md-6">
       <!--締め切りボタン-->
-      <% if current_user.id == 1 || current_user.id == 10 %>
+      <!--% if current_user.id == 1 || current_user.id == 10 %-->
         <%= link_to day_path(day.id), method: :patch do %><button type="button" class="btn btn-success btn-sm">作成済</button><% end %>
-      <% end %>
+      <!--% end %-->
       <!--削除ボタン-->
-      <% if current_user.id == 1 %>
+      <!--% if current_user.id == 1 %-->
         <%= link_to day_path(day.id), method: :delete, "data-confirm" => "本当に削除しますか？" do %>
           <button type="button" class="btn btn-outline-danger btn-sm">
             <i class="fa-solid fa-trash-can"></i>
           </button>
         <% end %>
-      <% end %>
+      <!--% end %-->
     </div>
   </div>
 <% end %>
@@ -43,13 +43,13 @@
       <% end %>
     </div>
     <div class="col-4 col-md-6">
-      <% if current_user.id == 1 %>
+      <!--% if current_user.id == 1 %-->
         <%= link_to day_path(day.id), method: :delete, "data-confirm" => "本当に削除しますか？" do %>
           <button type="button" class="btn btn-outline-danger btn-sm">
             <i class="fa-solid fa-trash-can"></i>
           </button>
         <% end %>
-      <% end %>
+      <!--% end %-->
     </div>
   </div>
 <% end %>

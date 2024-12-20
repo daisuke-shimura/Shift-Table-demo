@@ -4,116 +4,92 @@
   <th class="two"></th>
   <th class="day">
     <% if day.mon_by?(day.id) %>
-      <% if current_user.id == 1 %>
+      <!--% if current_user.id == 1 %-->
         <%= link_to day_mons_path(day.id), method: :delete ,:style=>"color: red" do %>
           <%= day.start.month %>/<%= day.start.day %>
         <% end %>
-      <% else %>
-        <div style="color: red"><%= day.start.month %>/<%= day.start.day %></div>
-      <% end %>
+
     <% else %>
-      <% if current_user.id == 1 %>
+      <!--% if current_user.id == 1 %-->
         <%= link_to day_mons_path(day.id), method: :post ,:style=>"color: black" do %>
           <%= day.start.month %>/<%= day.start.day %>
         <% end %>
-      <% else %>
-          <%= day.start.month %>/<%= day.start.day %>
-      <% end %>
+
     <% end %>
   </th>
   <th class="day">
     <% if day.tue_by?(day.id) %>
-      <% if current_user.id == 1 %>
+      <!--% if current_user.id == 1 %-->
         <%= link_to day_tues_path(day.id), method: :delete ,:style=>"color: red" do %>
           <%= (day.start+1).month %>/<%= (day.start+1).day %>
         <% end %>
-      <% else %>
-        <div style="color: red"><%= (day.start+1).month %>/<%= (day.start+1).day %></div>
-      <% end %>
+
     <% else %>
-      <% if current_user.id == 1 %>
+      <!--% if current_user.id == 1 %-->
         <%= link_to day_tues_path(day.id), method: :post ,:style=>"color: black" do %>
           <%= (day.start+1).month %>/<%= (day.start+1).day %>
         <% end %>
-      <% else %>
-          <%= (day.start+1).month %>/<%= (day.start+1).day %>
-      <% end %>
+
     <% end %>
   </th>
   <th class="day">
    <% if day.wed_by?(day.id) %>
-      <% if current_user.id == 1 %>
+      <!--% if current_user.id == 1 %-->
         <%= link_to day_weds_path(day.id), method: :delete ,:style=>"color: red" do %>
           <%= (day.start+2).month %>/<%= (day.start+2).day %>
         <% end %>
-      <% else %>
-        <div style="color: red"><%= (day.start+2).month %>/<%= (day.start+2).day %></div>
-      <% end %>
+
     <% else %>
-      <% if current_user.id == 1 %>
+      <!--% if current_user.id == 1 %-->
         <%= link_to day_weds_path(day.id), method: :post ,:style=>"color: black" do %>
           <%= (day.start+2).month %>/<%= (day.start+2).day %>
         <% end %>
-      <% else %>
-          <%= (day.start+2).month %>/<%= (day.start+2).day %>
-      <% end %>
+
     <% end %>
   </th>
   <th class="day">
    <% if day.thu_by?(day.id) %>
-      <% if current_user.id == 1 %>
+      <!--% if current_user.id == 1 %-->
         <%= link_to day_thus_path(day.id), method: :delete ,:style=>"color: red" do %>
           <%= (day.start+3).month %>/<%= (day.start+3).day %>
         <% end %>
-      <% else %>
-        <div style="color: red"><%= (day.start+3).month %>/<%= (day.start+3).day %></div>
-      <% end %>
+
     <% else %>
-      <% if current_user.id == 1 %>
+      <!--% if current_user.id == 1 %-->
         <%= link_to day_thus_path(day.id), method: :post ,:style=>"color: black" do %>
           <%= (day.start+3).month %>/<%= (day.start+3).day %>
         <% end %>
-      <% else %>
-          <%= (day.start+3).month %>/<%= (day.start+3).day %>
-      <% end %>
+
     <% end %>
   </th>
   <th class="day">
     <% if day.fri_by?(day.id) %>
-      <% if current_user.id == 1 %>
+      <!--% if current_user.id == 1 %-->
         <%= link_to day_fris_path(day.id), method: :delete ,:style=>"color: red" do %>
           <%= (day.start+4).month %>/<%= (day.start+4).day %>
         <% end %>
-      <% else %>
-        <div style="color: red"><%= (day.start+4).month %>/<%= (day.start+4).day %></div>
-      <% end %>
+
     <% else %>
-      <% if current_user.id == 1 %>
+      <!--% if current_user.id == 1 %-->
         <%= link_to day_fris_path(day.id), method: :post ,:style=>"color: black" do %>
           <%= (day.start+4).month %>/<%= (day.start+4).day %>
         <% end %>
-      <% else %>
-          <%= (day.start+4).month %>/<%= (day.start+4).day %>
-      <% end %>
+
     <% end %>
   </th>
   <th class="day">
     <% if day.sat_by?(day.id) %>
-      <% if current_user.id == 1 %>
+      <!--% if current_user.id == 1 %-->
         <%= link_to day_sats_path(day.id), method: :delete ,:style=>"color: red" do %>
           <%= (day.start+5).month %>/<%= (day.start+5).day %>
         <% end %>
-      <% else %>
-        <div style="color: red"><%= (day.start+5).month %>/<%= (day.start+5).day %></div>
-      <% end %>
+
     <% else %>
-      <% if current_user.id == 1 %>
+      <!--% if current_user.id == 1 %-->
         <%= link_to day_sats_path(day.id), method: :post ,:style=>"color: dodgerblue" do %>
           <%= (day.start+5).month %>/<%= (day.start+5).day %>
         <% end %>
-      <% else %>
-        <div style="color: dodgerblue"><%= (day.start+5).month %>/<%= (day.start+5).day %></div>
-      <% end %>
+
     <% end %>
   </th>
   <th class="day">
@@ -130,116 +106,92 @@
   <th class="two_2"></th>
   <th class="week">
     <% if day.mon_by?(day.id) %>
-      <% if current_user.id == 1 %>
+      <!--% if current_user.id == 1 %-->
         <%= link_to day_mons_path(day.id), method: :delete ,:style=>"color: red" do %>
           月
         <% end %>
-      <% else %>
-        <div style="color: red">月</div>
-      <% end %>
+
     <% else %>
-      <% if current_user.id == 1 %>
+      <!--% if current_user.id == 1 %-->
         <%= link_to day_mons_path(day.id), method: :post ,:style=>"color: black" do %>
           月
         <% end %>
-      <% else %>
-          月
-      <% end %>
+
     <% end %>
   </th>
   <th class="week">
     <% if day.tue_by?(day.id) %>
-      <% if current_user.id == 1 %>
+      <!--% if current_user.id == 1 %-->
         <%= link_to day_tues_path(day.id), method: :delete ,:style=>"color: red" do %>
           火
         <% end %>
-      <% else %>
-        <div style="color: red">火</div>
-      <% end %>
+      
     <% else %>
-      <% if current_user.id == 1 %>
+      <!--% if current_user.id == 1 %-->
         <%= link_to day_tues_path(day.id), method: :post ,:style=>"color: black" do %>
           火
         <% end %>
-      <% else %>
-          火
-      <% end %>
+      
     <% end %>
   </th>
   <th class="week">
     <% if day.wed_by?(day.id) %>
-      <% if current_user.id == 1 %>
+      <!--% if current_user.id == 1 %-->
         <%= link_to day_weds_path(day.id), method: :delete ,:style=>"color: red" do %>
           水
         <% end %>
-      <% else %>
-        <div style="color: red">水</div>
-      <% end %>
+      
     <% else %>
-      <% if current_user.id == 1 %>
+      <!--% if current_user.id == 1 %-->
         <%= link_to day_weds_path(day.id), method: :post ,:style=>"color: black" do %>
           水
         <% end %>
-      <% else %>
-          水
-      <% end %>
+      
     <% end %>
   </th>
   <th class="week">
     <% if day.thu_by?(day.id) %>
-      <% if current_user.id == 1 %>
+      <!--% if current_user.id == 1 %-->
         <%= link_to day_thus_path(day.id), method: :delete ,:style=>"color: red" do %>
           木
         <% end %>
-      <% else %>
-        <div style="color: red">木</div>
-      <% end %>
+
     <% else %>
-      <% if current_user.id == 1 %>
+      <!--% if current_user.id == 1 %-->
         <%= link_to day_thus_path(day.id), method: :post ,:style=>"color: black" do %>
           木
         <% end %>
-      <% else %>
-          木
-      <% end %>
+
     <% end %>
   </th>
   <th class="week">
     <% if day.fri_by?(day.id) %>
-      <% if current_user.id == 1 %>
+      <!--% if current_user.id == 1 %-->
         <%= link_to day_fris_path(day.id), method: :delete ,:style=>"color: red" do %>
           金
         <% end %>
-      <% else %>
-        <div style="color: red">金</div>
-      <% end %>
+
     <% else %>
-      <% if current_user.id == 1 %>
+      <!--% if current_user.id == 1 %-->
         <%= link_to day_fris_path(day.id), method: :post ,:style=>"color: black" do %>
           金
         <% end %>
-      <% else %>
-          金
-      <% end %>
+
     <% end %>
   </th>
   <th class="week">
     <% if day.sat_by?(day.id) %>
-      <% if current_user.id == 1 %>
+      <!--% if current_user.id == 1 %-->
         <%= link_to day_sats_path(day.id), method: :delete ,:style=>"color: red" do %>
           土
         <% end %>
-      <% else %>
-        <div style="color: red">土</div>
-      <% end %>
+
     <% else %>
-      <% if current_user.id == 1 %>
+      <!--% if current_user.id == 1 %-->
         <%= link_to day_sats_path(day.id), method: :post ,:style=>"color: dodgerblue" do %>
           土
         <% end %>
-      <% else %>
-        <div style="color: dodgerblue">土</div>
-      <% end %>
+
     <% end %>
   </th>
   <th class="week" style="color: red">日</th>
