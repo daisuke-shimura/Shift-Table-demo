@@ -5,6 +5,20 @@ class JobsController < ApplicationController
     @day = Day.find(params[:day_id])
     @user = User.all
     @job_comment = JobComment.where(day_id: @day.id)
+    #ダミーデータ
+    unless Job.exists?(day_id: params[:day_id], user_id: 2)
+      Job.create(
+        time1: "F",
+        time2: "9-15",
+        time3: "×",
+        time4: "16:30-L",
+        time5: "13-19:30",
+        time6: "",
+        time7: "11:30-17:30",
+        user_id: 2,
+        day_id: params[:day_id],
+      )
+    end
   end
 
   def create
