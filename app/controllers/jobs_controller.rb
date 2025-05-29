@@ -7,7 +7,7 @@ class JobsController < ApplicationController
     @job_comment = JobComment.where(day_id: @day.id)
     #ダミーデータ
     unless Job.exists?(day_id: params[:day_id], user_id: 2)
-      Job.create(
+      job = Job.create(
         time1: "F",
         time2: "9-15",
         time3: "×",
@@ -16,7 +16,14 @@ class JobsController < ApplicationController
         time6: "",
         time7: "11:30-17:30",
         user_id: 2,
-        day_id: params[:day_id],
+        day_id: params[:day_id]
+      )
+
+      JobComment.create(
+        user_id: job.user_id,
+        day_id: job.day_id,
+        job_id: job.id,
+        comment: "予定が確定し、募集枠があれば\n土曜日入ります"
       )
     end
   end
