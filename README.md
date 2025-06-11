@@ -309,7 +309,10 @@ end
 ```
 </details>
 
-### Excel形式に出力 コントローラ(`excel_controller.rb`)
+
+## 特に力を入れて作成した機能
+
+### Excel形式に出力（`excel_controller.rb`）
 <details>
 <summary>コード</summary>
 
