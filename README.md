@@ -3,7 +3,7 @@
 
 
 ## デモ版のURL
-https://shifttabledemoapp.site/
+https://shifttabledemoapp.site/  
 ※ユーザ名を空欄、パスワードを0000で入れます
 
 
