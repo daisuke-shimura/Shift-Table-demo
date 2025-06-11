@@ -8,19 +8,15 @@ https://shifttabledemoapp.site/
 
 
 ## 開発背景
-作成した経緯としては、1年生の頃から働かせていただいているアルバイト先が
-店舗にある名簿にシフト希望を記入しなければならず、不便だと感じ、
-店舗にいかなくても提出できるシステムを作りたいと考えたことです。 
-店長に作った旨をお話しし、実際に今も使っていただいております。
-このアプリの導入により、特に実家が地方にある方や久しぶりに出勤する人達に
-大変好評で使っていただいております。また、シフト希望数も増加し、
-以前に比べ、人が足りていないときに発生する募集枠がなくなりました。
+作成した経緯としては、1年生の頃から働かせていただいているアルバイト先が店舗にある名簿にシフト希望を記入しなければならず、不便だと感じ、店舗にいかなくても提出できるシステムを作りたいと考えたことです。  
+店長に作った旨をお話しし、実際に今も使っていただいております。  
+このアプリの導入により、特に実家が地方にある方や久しぶりに出勤する人達に大変好評で使っていただいております。加えて、シフト希望数も増加し、以前に比べ、人が足りていないときに発生する募集枠がなくなりました。
 
 
 ## 技術選定
-主にRuby on Railsを使用し、
-UI調整のためにBootstrapを一部、使用しました。
-デプロイにはAWSを使用しました。
+主にRuby on Railsを使用し、  
+UI調整のためにBootstrapを一部、使用しました。  
+デプロイにはAWSを使用しました。  
 
 ## 選定意図
 
@@ -40,6 +36,9 @@ UI調整のためにBootstrapを一部、使用しました。
 ## 主要なソースコード
 
 ### ルーティング（`routes.rb`）
+<details>
+<summary>コード</summary>
+
 ```ruby
 Rails.application.routes.draw do
 
@@ -60,8 +59,12 @@ Rails.application.routes.draw do
 
 end
 ```
+</details>
 
 ### データベース（`schema.rb`）
+<details>
+<summary>コード</summary>
+
 ```ruby
 ActiveRecord::Schema.define(version: 2024_11_22_103513) do
 
@@ -159,11 +162,15 @@ ActiveRecord::Schema.define(version: 2024_11_22_103513) do
 
 end
 ```
-※曜日に関するテーブル（mons, satsなど）は祝日かどうかを判定するためだけに作成したテーブルです
-  今後、改良する際には、祝日の判定にgemを取り入れ、これらのテーブルの削除したいと考えています。
+※曜日に関するテーブル（mons, satsなど）は祝日かどうかを判定するためだけに作成したテーブルです  
+　今後、改良する際には、祝日の判定にgemを取り入れ、これらのテーブルの削除したいと考えています。
+</details>
 
 ### コントローラ（`jobs_controller.rb`）
 ※シフト希望を提出するコントローラ
+<details>
+<summary>コード</summary>
+
 ```ruby
 class JobsController < ApplicationController
 
@@ -203,9 +210,13 @@ class Job < ApplicationRecord
 
 end
 ```
+</details>
 
 ### ビュー（`jobs/new.html.erb`）
 ※シフト希望の一覧画面
+<details>
+<summary>コード</summary>
+
 ```erb
 <% unless current_user.job_by?(current_user.id, @day.id) %>
   <hr>
@@ -256,9 +267,13 @@ end
 <% end %>
 </tbody>
 ```
+</details>
 
 ### ビュー（`jobs/_form.html.erb`）
 ※シフト希望の提出画面
+<details>
+<summary>コード</summary>
+
 ```erb
 <%= form_with model:[day, Job.new], url: day_jobs_path(day.id), method: :post do |f| %>
   <div class= "scroll">
@@ -292,6 +307,7 @@ end
   </div>
 <% end %>
 ```
+</details>
 
 ### Excel形式に出力 コントローラ(`excel_controller.rb`)
 <details>
@@ -644,7 +660,8 @@ class ExcelController < ApplicationController
     end
 
 end
-</details>```
+```
+</details>
 
 
 ## 今後の展望
